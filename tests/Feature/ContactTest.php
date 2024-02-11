@@ -4,7 +4,9 @@ namespace Tests\Feature;
 
 use App\Models\Contact;
 use Database\Seeders\ContactSeeder;
+use Database\Seeders\SearchSeeder;
 use Database\Seeders\UserSeeder;
+use Illuminate\Support\Facades\Log;
 use Tests\TestCase;
 
 class ContactTest extends TestCase
@@ -212,4 +214,34 @@ class ContactTest extends TestCase
             ]
         ]);
     }
+
+    // public function testSearchByFirstName()
+    // {
+    // $this->seed([UserSeeder::class, SearchSeeder::class]);
+
+    // $contacts = $this->get('/api/contacts?name=yudis', [
+    //     "Authorization" => "test"
+    // ])->assertStatus(200);
+    //     ->json();
+
+    // Log::info($contacts);
+
+    // self::assertEquals(10, count($contacts->data));
+    // }
+
+    // public function testSearchByLastName()
+    // {
+    // }
+
+    // public function testSearchByPhone()
+    // {
+    // }
+
+    // public function testSearchByEmail()
+    // {
+    // }
+
+    // public function testSearchPagination()
+    // {
+    // }
 }

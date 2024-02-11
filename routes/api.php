@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\ApiAuthMiddleware;
@@ -25,7 +26,14 @@ Route::middleware(ApiAuthMiddleware::class)->group(function () {
     Route::delete('/users/logout', [UserController::class, 'logout']);
 
     Route::post('/contact', [ContactController::class, 'create']);
+    Route::get('/contacts', [ContactController::class, 'search']);
     Route::get('/contacts/{id}', [ContactController::class, 'get']);
     Route::put('/contacts/{id}', [ContactController::class, 'update']);
-    Route::delete('/contacts/{contact:id}', [ContactController::class, 'delete']);
+    Route::delete('/contacts/{id}', [ContactController::class, 'delete']);
+
+    Route::get('/contacts/{id}/addresses', [AddressController::class, 'index']);
+    Route::post('/contacts/{id}/addresses', [AddressController::class, 'create']);
+    Route::get('/contacts/{contactid}/addresses/{addressid}', [AddressController::class, 'get']);
+    Route::put('/contacts/{contactid}/addresses/{addressid}', [AddressController::class, 'update']);
+    Route::delete('/contacts/{contactid}/addresses/{addressid}', [AddressController::class, 'delete']);
 });

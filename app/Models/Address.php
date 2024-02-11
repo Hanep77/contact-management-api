@@ -10,11 +10,12 @@ class Address extends Model
 {
     use HasFactory;
 
-    protected $table = "address";
+    protected $table = "addresses";
     protected $primaryKey = "id";
     protected $keyType = "int";
     public $incrementing = true;
     public $timestamps = true;
+    protected $guarded = ["id"];
 
     public function contact(): BelongsTo
     {

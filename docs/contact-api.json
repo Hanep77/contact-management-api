@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.3",
     "info": {
-        "title": "User API",
-        "description": "User API",
+        "title": "Contact API",
+        "description": "Contact API",
         "version": "1.0.0"
     },
     "servers": [
